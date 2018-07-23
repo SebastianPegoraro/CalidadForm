@@ -1,0 +1,10 @@
+#foot {
+    width: 100%;
+    background: linear-gradient(-90deg, #0089CB, #003F58);
+}
+
+.logos img {
+    height: 40px;
+    width: auto;
+    margin: 10px;
+}
