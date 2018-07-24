@@ -1,0 +1,30 @@
+html{
+    background-image: url('../img/fondo-horizontal.jpg');
+    background-repeat: repeat-y;
+    background-size: contain;
+    height: 100%;
+  }
+  
+body{
+height: 89%;
+}
+
+.cuadro{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.boton{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.masterHead {
+    background: linear-gradient(-90deg, #003F58, #0089CB);
+}
+
+.title {
+    color: #fff;
+    /*font-size: 13px;*/
+    margin-top: 12px;
+}
