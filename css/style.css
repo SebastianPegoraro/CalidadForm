@@ -23,8 +23,64 @@ height: 89%;
     background: linear-gradient(-90deg, #003F58, #0089CB);
 }
 
-.title {
+.titleHead {
     color: #fff;
     /*font-size: 13px;*/
     margin-top: 12px;
+}
+
+.title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.regular {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.codificacion{
+    font-size: 13px;
+}
+
+/*Fuente Book*/
+@font-face {
+	font-family: 'Geomanist_Book';
+	src: url('../fonts/Geomanist-Book.eot');
+	src: url('../fonts/Geomanist-Book.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Geomanist-Book.woff2') format('woff2'),
+		url('../fonts/Geomanist-Book.woff') format('woff'),
+		url('../fonts/Geomanist-Book.ttf') format('truetype'),
+		url('../fonts/Geomanist-Book.svg#Geomanist-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.book {
+    font-family: 'Geomanist_Book';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logos img {
+    height: 40px;
+    width: auto;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 576px) {
+    .content {
+      min-height: 96%;
+    }
+
+    .titleHead{
+        font-size: 40px;
+    }
+
+    .codificacion{
+        font-size: 30px;
+    }
+    
+    .logos img{
+        height: 60px;
+    }
 }

@@ -1,8 +1,11 @@
 <header class="MasterHead">
     <div class='container'>
         <div class='row'>
-            <div class='col-9'>
-                <h2 class="title">Gestión de Trámites</h2>
+            <div class='col-8'>
+                <h4 class="titleHead regular">Gestión de Trámites</h4>
+            </div>
+            <div class='col-4 align-self-end'>
+                <h6 class="titleHead regular codificacion"> FO-02-113-003 </h6>
             </div>
         </div>
     </div>
@@ -12,7 +15,7 @@
     <div class='container content'>
         <div class='row'>
             <div class='col'>
-                <h3 class='text-center'> Jurisdicción </h3>
+                <h1 class='text-center title book'> Jurisdicción </h1>
                 <form action=''>
                     <div class='row'>
                         <div class='form-group col-sm-3'>
@@ -64,6 +67,32 @@
                                     <input type='text' class='form-control' name='campo' id='campo' placeholder='Something'>
                                 </div>
                             </div>              
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label> Nombre y Apellido</label>
+                            <input type="text" class='form-control' name="nomyape" id="nomyape" placeholder="Nombre y Apellido">
+                            <small>Director o Responsable</small>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label> Oficina </label>
+                            <input type="text" class='form-control' name="oficina" id="oficina" placeholder="Oficina">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> Correo/Teléfono</label>
+                            <input type="text" class='form-control' name="correotel" id="correotel" placeholder="Correo Elctrónico o Teléfono">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> D.N.I. </label>
+                            <input type="text" class='form-control' name="dni" id="dni" placeholder="D.N.I.">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> Fecha </label>
+                            <input type="text" class='form-control' name="fecha" id="fecha" placeholder="Fecha">
                         </div>
                     </div>
 
