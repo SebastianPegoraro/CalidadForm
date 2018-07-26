@@ -20,11 +20,11 @@
                     <div class='row'>
                         <div class='form-group col-sm-3'>
                             <label>N°</label>
-                            <input type='text' class='form-control' name='num' id='num' placeholder='Número'>
+                            <input type='text' class='form-control' name='numero' placeholder='Número'>
                         </div>
                         <div class='form-group col-sm-9'>
                             <label>Denominación</label>  
-                            <input type='text' class='form-control' name='denominacion' id='denominacion' placeholder='Denominacion de Oficina'>
+                            <input type='text' class='form-control' name='denominacion' placeholder='Denominacion de Oficina'>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                             <div class='row cuadro'>
                                 <div class='form-group col-sm-2'>
                                     <label> ACCIÓN (1) </label>
-                                    <select class='custom-select' name='accion' id='accion'>
+                                    <select class='custom-select' name='accion[]'>
                                         <option selected disabled>Acción</option>
                                         <option value='IT'>IT</option>
                                         <option value='IC'>IC</option>
@@ -44,33 +44,33 @@
                                 </div>
                                 <div class='form-group col-sm-5'>
                                     <label> ASUNTO (2) </label>  
-                                    <input type='text' class='form-control' name='asunto' id='asunto' placeholder='Asunto'>
+                                    <input type='text' class='form-control' name='asunto[]' placeholder='Asunto'>
                                 </div>
                                 <div class='form-group col-sm-5'>
                                     <label> CAUSA (3) </label>  
-                                    <input type='text' class='form-control' name='causa' id='causa' placeholder='Causa'>
+                                    <input type='text' class='form-control' name='causa[]' placeholder='Causa'>
                                 </div>
                                 <div class='form-group col-sm-12'>
                                     <label> DESCRIPCIÓN (4) </label>
-                                    <textarea class='form-control' placeholder='Descripción' name='descripcion' id='descripcion' rows='2'></textarea>
+                                    <textarea class='form-control' placeholder='Descripción' name='descripcion[]' rows='2'></textarea>
                                 </div>
                                 <div class='form-group col-sm-4'>
                                     <label> CAMPO (5) </label>  
-                                    <input type='text' class='form-control' name='campo' id='campo' placeholder='Something'>
+                                    <input type='text' class='form-control' name='campo1[]' placeholder='Something'>
                                 </div>
                                 <div class='form-group col-sm-4'>
                                     <label> CAMPO (6) </label>  
-                                    <input type='text' class='form-control' name='campo' id='campo' placeholder='Something'>
+                                    <input type='text' class='form-control' name='campo2[]' placeholder='Something'>
                                 </div>
                                 <div class='form-group col-sm-4'>
                                     <label> CAMPO (7) </label>  
-                                    <input type='text' class='form-control' name='campo' id='campo' placeholder='Something'>
+                                    <input type='text' class='form-control' name='campo3[]' placeholder='Something'>
                                 </div>
                             </div>              
                         </div>
                     </div>
 
-                    <br><br>
+                    <br>
 
                     <div class="row">
                         <div class="form-group col-sm-6">
