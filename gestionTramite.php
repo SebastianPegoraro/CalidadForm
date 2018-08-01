@@ -10,17 +10,17 @@
         </div>
     </div>
 </header>
-
+<br><br>
 <section>
     <div class='container content'>
         <div class='row'>
             <div class='col'>
-                <h1 class='text-center title book'> Jurisdicción </h1>
+                <!--<h2 class='title book'> Jurisdicción </h2>-->
                 <form action=''>
-                    <div class='row'>
+                    <div class='row'>                    
                         <div class='form-group col-sm-3'>
-                            <label>N°</label>
-                            <input type='text' class='form-control' name='numero' placeholder='Número'>
+                            <label>N° Jurisdicción</label>
+                            <input type='text' class='form-control' name='numero' placeholder='Número Jurisdicción'>
                         </div>
                         <div class='form-group col-sm-9'>
                             <label>Denominación</label>  
@@ -30,7 +30,10 @@
 
                     <div class='card' id='tramite'>
                         <div class='card-body'>
-                            <div class='row cuadro'>
+                            <div class='form-group col-sm-12'>
+                                <h4 class="book">Trámite</h4>
+                            </div>
+                            <div class='row cuadro'>                                
                                 <div class='form-group col-sm-2'>
                                     <label> ACCIÓN (1) </label>
                                     <select class='custom-select' name='accion[]'>
@@ -73,6 +76,9 @@
                     <br>
 
                     <div class="row">
+                        <div class="form-group col-sm-12">
+                            <h4 class="book">Responsable</h4>
+                        </div>
                         <div class="form-group col-sm-6">
                             <label> Nombre y Apellido</label>
                             <input type="text" class='form-control' name="nomyape" id="nomyape" placeholder="Nombre y Apellido">

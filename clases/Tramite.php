@@ -10,7 +10,7 @@ class Tramite {
     private $campo1;
     private $campo2;
     private $campo3;
-    const TABLA = 'tramite';
+    const TABLA = 'tramites';
 
     public function getId() {
         return $this->id;
@@ -86,7 +86,7 @@ class Tramite {
     public function guardarTramite() {
         $conexion = new Connect();
         if ($this->id) {
-            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET accion = :accion, asunto = :asunto, causa = :causa, descripcion = :descripcion, campo1 = :campo1, campo2 = :campo2, campo3 = :campo3, WHERE id = :id');
+            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET accion = :accion, asunto = :asunto, causa = :causa, descripcion = :descripcion, campo1 = :campo1, campo2 = :campo2, campo3 = :campo3 WHERE id = :id');
             $consulta->bindParam(':accion', $this->accion);
             $consulta->bindParam(':asunto', $this->asunto);
             $consulta->bindParam(':causa', $this->causa);
@@ -109,6 +109,19 @@ class Tramite {
             $this->id = $conexion->lastInsertId();
         }
         $conexion = null;
+    }
+
+    public function buscarPorId($id) {
+        $conexion = new Connect();
+        $consulta = $conexion->prepare('SELECT accion, asunto, causa, descripcion, campo1, campo2, campo3 FROM '.self::TABLA.' WHERE id = :id');
+        $consulta->bindParam(':id', $id);
+        $consulta->execute();
+        $registro = $consulta->fetch();
+        if ($registro) {
+            return new self($registro['accion'], $registro['asunto'], $registro['causa'], $registro['descripcion'], $registro['campo1'], $registro['campo2'], $registro['campo3'], $id);            
+        } else {
+            return false;
+        }
     }
     
 }
