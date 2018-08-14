@@ -2,7 +2,7 @@
     <div class='container'>
         <div class='row'>
             <div class='col-8'>
-                <h4 class="titleHead regular">Gestión de Trámites</h4>
+                <h4 class="titleHead regular">Gestión de Usuarios</h4>
             </div>
             <div class='col-4 align-self-end'>
                 <h6 class="titleHead regular codificacion"> FO-02-113-003 </h6>
@@ -33,41 +33,51 @@
                             <div class='form-group col-sm-12'>
                                 <h4 class="book">Trámite</h4>
                             </div>
-                            <div class='row cuadro'>                                
+                            <div class='row cuadro'>
+
                                 <div class='form-group col-sm-2'>
-                                    <label> ACCIÓN (1) </label>
-                                    <select class='custom-select' name='accion[]'>
-                                        <option selected disabled>Acción</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='IC'>IC</option>
-                                        <option value='MT'>MT</option>
-                                        <option value='ET'>ET</option>
-                                        <option value='EC'>EC</option>
+                                    <label> D.N.I. </label>
+                                    <input type='text' class='form-control' name='udni[]' placeholder='D.N.I.'>
+                                </div>
+                                <div class='form-group col-sm-4'>
+                                    <label> Apellido y Nombre </label>  
+                                    <input type='text' class='form-control' name='nomyape[]' placeholder='Apellido y Nombre'>
+                                </div>
+                                <div class='form-group col-sm-2'>
+                                    <label> Teléfono / Celular </label>  
+                                    <input type='text' class='form-control' name='tel[]' placeholder='Teléfono / Celular'>
+                                </div>
+                                <div class='form-group col-sm-4'>
+                                    <label> Correo Electrónico </label>
+                                    <input type='email' class='form-control' name='email[]' placeholder='Correo Electrónico'>
+                                </div>
+                                <!-- Oficina -->        
+                                <div class='form-group col-sm-3'>
+                                    <label> CUOF - ANEXO - UNGI </label>  
+                                    <input type='text' class='form-control' name='cuof[]' placeholder='CUOF - ANEXO - UNGI'>
+                                </div>
+                                <div class='form-group col-sm-9'>
+                                    <label> Denominación </label>  
+                                    <input type='text' class='form-control' name='udenominacion[]' placeholder='Denominación'>
+                                </div>
+                                <!-- Se solicita -->
+                                <div class='form-group col-sm-2 offset-sm-2'>
+                                    <label> Solicita </label>  
+                                    <select class='custom-select' name='solicita[]'>
+                                        <option selected disabled>Solicita</option>
+                                        <option value='habilitar'>Habilitar</option>
+                                        <option value='modificar'>Modificar</option>
+                                        <option value='baja'>Baja</option>
                                     </select>
                                 </div>
-                                <div class='form-group col-sm-5'>
-                                    <label> ASUNTO (2) </label>  
-                                    <input type='text' class='form-control' name='asunto[]' placeholder='Asunto'>
-                                </div>
-                                <div class='form-group col-sm-5'>
-                                    <label> CAUSA (3) </label>  
-                                    <input type='text' class='form-control' name='causa[]' placeholder='Causa'>
-                                </div>
-                                <div class='form-group col-sm-12'>
-                                    <label> DESCRIPCIÓN (4) </label>
-                                    <textarea class='form-control' placeholder='Descripción' name='descripcion[]' rows='2'></textarea>
-                                </div>
-                                <div class='form-group col-sm-4'>
-                                    <label> CAMPO (5) </label>  
-                                    <input type='text' class='form-control' name='campo1[]' placeholder='Something'>
-                                </div>
-                                <div class='form-group col-sm-4'>
-                                    <label> CAMPO (6) </label>  
-                                    <input type='text' class='form-control' name='campo2[]' placeholder='Something'>
-                                </div>
-                                <div class='form-group col-sm-4'>
-                                    <label> CAMPO (7) </label>  
-                                    <input type='text' class='form-control' name='campo3[]' placeholder='Something'>
+                                <!-- Perfil -->
+                                <div class='form-group col-sm-2 offset-sm-4'>
+                                    <label> Perfil </label>  
+                                    <select class='custom-select' name='perfil[]'>
+                                        <option selected disabled>Perfil</option>
+                                        <option value='consulta'>Consulta</option>
+                                        <option value='operador'>Operador</option>
+                                    </select>
                                 </div>
                             </div>              
                         </div>
@@ -119,7 +129,7 @@
     </div>
 </section>
 
-<script src='js/agregaTramite.js'></script>
+<script src='js/agregaUsuario.js'></script>
 
 <?php
 include 'foot.php';
