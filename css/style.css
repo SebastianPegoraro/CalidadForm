@@ -83,4 +83,9 @@ height: 89%;
     .logos img{
         height: 60px;
     }
+
+    .boton{
+        margin-bottom: 3px;
+        margin-top: 3px;
+    }
 }

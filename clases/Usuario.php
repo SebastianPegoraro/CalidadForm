@@ -128,9 +128,9 @@ class Usuario {
         $consulta = $conexion->prepare('SELECT solicita, dni, nombre, telefono, correo, cuof, denominacion, perfil FROM '.self::TABLA.' WHERE id = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
-        $registro = $consulta->fetch_array();
+        $registro = $consulta->fetch();
         if ($registro) {
-            return $registro;
+            return new self($registro['solicita'], $registro['dni'], $registro['nombre'], $registro['telefono'], $registro['correo'], $registro['cuof'], $registro['denominacion'], $registro['perfil'], $id);
         } else {
             return false;
         }

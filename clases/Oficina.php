@@ -92,9 +92,9 @@ class Oficina {
         $consulta = $conexion->prepare('SELECT numero, denominacion, opcion, categoria, cuofDestino FROM '.self::TABLA.' WHERE id = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
-        $registro = $consulta->fetch_array();
+        $registro = $consulta->fetch();
         if ($registro) {
-            return $registro;
+            return new self($registro['numero'], $registro['denominacion'], $registro['opcion'], $registro['categoria'], $registro['cuofDestino'], $id);
         } else {
             return false;
         }

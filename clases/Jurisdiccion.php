@@ -36,7 +36,7 @@ class Jurisdiccion {
     public function guardar() {
         $conexion = new Connect();
         if ($this->id) /* Modifica */ {
-            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET numero = :numero, denominacion = :denominacion WHERE id = :id');
+            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET numero = :numero, denominacion = :denominacion WHERE id_jurisdiccion = :id');
             $consulta->bindParam(':numero', $this->numero);
             $consulta->bindParam(':denominacion', $this->denominacion);
             $consulta->bindParam(':id', $this->id);
@@ -53,12 +53,25 @@ class Jurisdiccion {
 
     public function buscarPorId($id) {
         $conexion = new Connect();
-        $consulta = $conexion->prepare('SELECT numero, denominacion FROM '.self::TABLA.' WHERE id = :id');
+        $consulta = $conexion->prepare('SELECT numero, denominacion FROM '.self::TABLA.' WHERE id_jurisdiccion = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
         $registro = $consulta->fetch();
         if ($registro) {
             return new self($registro['numero'], $registro['denominacion'], $id);
+        } else {
+            return false;
+        }
+    }
+
+    public function buscarPorNumero($numero) {
+        $conexion = new Connect();
+        $consulta = $conexion->prepare('SELECT denominacion FROM '.self::TABLA.' WHERE numero = :numero');
+        $consulta->bindParam(':numero', $numero);
+        $consulta->execute();
+        $registro = $consulta->fetch();
+        if ($registro) {
+            return new self($registro['numero'] = '', $registro['denominacion'], $id = null);
         } else {
             return false;
         }

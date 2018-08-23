@@ -2,7 +2,7 @@
     <div class='container'>
         <div class='row'>
             <div class='col-8'>
-                <h4 class="titleHead regular">Gestión de Trámites</h4>
+                <h4 class="titleHead regular">Gestión de Trámites SGT</h4>
             </div>
             <div class='col-4 align-self-end'>
                 <h6 class="titleHead regular codificacion"> FO-02-113-003 </h6>
@@ -17,32 +17,57 @@
             <div class='col'>
                 <!--<h2 class='title book'> Jurisdicción </h2>-->
                 <form action=''>
-                    <div class='row'>                    
+                
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <h4 class="book">Autoridad solicitante</h4>
+                        </div>
                         <div class='form-group col-sm-3'>
                             <label>N° Jurisdicción</label>
-                            <input type='text' class='form-control' name='numero' placeholder='Número Jurisdicción'>
+                            <input type='text' class='form-control' name='numero' placeholder='Número Jurisdicción' id='numeroJur'>
                         </div>
                         <div class='form-group col-sm-9'>
                             <label>Denominación</label>  
-                            <input type='text' class='form-control' name='denominacion' placeholder='Denominacion de Oficina'>
+                            <input type='text' class='form-control' name='denominacion' placeholder='Denominacion de Oficina' id='denominacionJur'>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label> Nombre y Apellido</label>
+                            <input type="text" class='form-control' name="nomyape" id="nomyape" placeholder="Nombre y Apellido">
+                            <small>Director o Responsable</small>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label> Oficina </label>
+                            <input type="text" class='form-control' name="oficina" id="oficina" placeholder="Oficina">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> Correo/Teléfono</label>
+                            <input type="text" class='form-control' name="correotel" id="correotel" placeholder="Correo Elctrónico o Teléfono">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> D.N.I. </label>
+                            <input type="text" class='form-control' name="dni" id="dni" placeholder="D.N.I.">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label> Fecha </label>
+                            <input type="text" class='form-control' name="fecha" id="fecha" placeholder="Fecha" disabled>
                         </div>
                     </div>
 
                     <div class='card' id='tramite'>
                         <div class='card-body'>
                             <div class='form-group col-sm-12'>
-                                <h4 class="book">Trámite</h4>
+                                <h4 class="book"> Se solicita: </h4>
                             </div>
                             <div class='row cuadro'>                                
                                 <div class='form-group col-sm-2'>
                                     <label> ACCIÓN (1) </label>
                                     <select class='custom-select' name='accion[]'>
                                         <option selected disabled>Acción</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='IC'>IC</option>
-                                        <option value='MT'>MT</option>
-                                        <option value='ET'>ET</option>
-                                        <option value='EC'>EC</option>
+                                        <option value='IT'>Incorporar Trámite</option>
+                                        <option value='IC'>Incorporar Causa</option>
+                                        <option value='MT'>Modificar Trámite</option>
+                                        <option value='ET'>Eliminar Trámite</option>
+                                        <option value='EC'>Eliminar Causa</option>
                                     </select>
                                 </div>
                                 <div class='form-group col-sm-5'>
@@ -72,39 +97,9 @@
                             </div>              
                         </div>
                     </div>
-
-                    <br>
-
-                    <div class="row">
-                        <div class="form-group col-sm-12">
-                            <h4 class="book">Responsable</h4>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label> Nombre y Apellido</label>
-                            <input type="text" class='form-control' name="nomyape" id="nomyape" placeholder="Nombre y Apellido">
-                            <small>Director o Responsable</small>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label> Oficina </label>
-                            <input type="text" class='form-control' name="oficina" id="oficina" placeholder="Oficina">
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label> Correo/Teléfono</label>
-                            <input type="text" class='form-control' name="correotel" id="correotel" placeholder="Correo Elctrónico o Teléfono">
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label> D.N.I. </label>
-                            <input type="text" class='form-control' name="dni" id="dni" placeholder="D.N.I.">
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <label> Fecha </label>
-                            <input type="text" class='form-control' name="fecha" id="fecha" placeholder="Fecha">
-                        </div>
-                    </div>
-
                     
                     <div class='row'>
-                        <div class='col-12'>
+                        <div class='col-12 text-right'>
                             <input type='submit' value='Imprimir' class='btn btn-outline-primary boton'>
                         </div>            
                     </div>
@@ -112,9 +107,12 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col'>
-                <button class='btn btn-outline-success boton' onclick='add_row();'> Agregar otro... </button>
+            <div class='col-sm-5'>
+                <a href="index.php" class='btn btn-outline-secondary boton'><i class="fas fa-arrow-left"></i> Volver </a>
             </div>
+            <div class='col-sm-7'>
+                <button class='btn btn-outline-success boton' onclick='add_row();'> Agregar otro... </button>
+            </div>  
         </div>
     </div>
 </section>
