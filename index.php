@@ -10,6 +10,7 @@ require 'base.html';
                     <div class="card-body">
                         <a href="gestionTramite.php" class="btn btn-primary btn-lg btn-block">Formulario Gestion de Tramite</a>
                         <a href="gestionUsuario.php" class="btn btn-primary btn-lg btn-block">Formulario Gestion de Usuario</a>
+                        <a href="gestionOficina.php" class="btn btn-primary btn-lg btn-block">Formulario Gestion de Oficina</a>
                     </div>
                 </div>
             </div>

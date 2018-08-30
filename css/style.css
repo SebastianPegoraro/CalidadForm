@@ -67,6 +67,10 @@ height: 89%;
     margin: 10px;
 }
 
+#logoSGT {
+    display: none;
+}
+
 @media only screen and (min-width: 576px) {
     .content {
       min-height: 96%;
@@ -87,5 +91,13 @@ height: 89%;
     .boton{
         margin-bottom: 3px;
         margin-top: 3px;
+    }
+    
+    #logoSGT {
+        display: block;
+        height: 70px;
+        width: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }

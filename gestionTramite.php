@@ -1,10 +1,13 @@
 <header class="MasterHead">
     <div class='container'>
         <div class='row'>
-            <div class='col-8'>
+            <div class="col-md-1">
+                <img src="img/logo-sgt.png" alt="" id="logoSGT">
+            </div>
+            <div class='col-8 col-md-7'>
                 <h4 class="titleHead regular">Gestión de Trámites SGT</h4>
             </div>
-            <div class='col-4 align-self-end'>
+            <div class='col-4 align-self-end text-right'>
                 <h6 class="titleHead regular codificacion"> FO-02-113-003 </h6>
             </div>
         </div>
@@ -41,7 +44,7 @@
                         </div>
                         <div class="form-group col-sm-4">
                             <label> Correo/Teléfono</label>
-                            <input type="text" class='form-control' name="correotel" id="correotel" placeholder="Correo Elctrónico o Teléfono">
+                            <input type="text" class='form-control' name="correotel" id="correotel" placeholder="Correo Electrónico o Teléfono">
                         </div>
                         <div class="form-group col-sm-4">
                             <label> D.N.I. </label>
