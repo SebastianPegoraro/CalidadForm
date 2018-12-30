@@ -33,7 +33,7 @@ if (isset($_REQUEST['guardar'])){
 
     for ($i=0; $i<count($accion); $i++){
         $tramite = new Tramite($accion[$i], $asunto[$i], $causa[$i], $descripcion[$i]);
-        die(var_dump($tramite));
+        //die(var_dump($tramite));
         $tramite->guardarTramite();
         array_push($idTramites, $tramite->getId());
         //die(var_dump($tramite));
