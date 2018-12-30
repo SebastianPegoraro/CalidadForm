@@ -6,7 +6,7 @@ class Jurisdiccion {
     private $numero;
     private $denominacion;
     const TABLA = 'jurisdicciones';
-
+    
     public function getId() {
         return $this->id;
     }
@@ -66,12 +66,11 @@ class Jurisdiccion {
 
     public function buscarPorNumero($numero) {
         $conexion = new Connect();
-        $consulta = $conexion->prepare('SELECT denominacion FROM '.self::TABLA.' WHERE numero = :numero');
-        $consulta->bindParam(':numero', $numero);
+        $consulta = $conexion->prepare('SELECT id_jurisdiccion,denominacion FROM '.self::TABLA.' WHERE numero = '.$numero);
         $consulta->execute();
         $registro = $consulta->fetch();
         if ($registro) {
-            return new self($registro['numero'] = '', $registro['denominacion'], $id = null);
+            return new self($registro['numero'] = '', $registro['denominacion'], $registro['id_jurisdiccion']);
         } else {
             return false;
         }

@@ -82,21 +82,21 @@ class Usuario {
     } 
 
     public function __construct($solicita, $dni, $nombre, $telefono, $correo, $cuof, $denominacion, $perfil, $id=null) {
-        $this->solicita;
-        $this->dni;
-        $this->nombre;
-        $this->telefono;
-        $this->correo;
-        $this->cuof;
-        $this->denominacion;
-        $this->perfil;
-        $this->id;
+        $this->solicita = $solicita;
+        $this->dni = $dni;
+        $this->nombre = $nombre;
+        $this->telefono = $telefono;
+        $this->correo = $correo;
+        $this->cuof = $cuof;
+        $this->denominacion = $denominacion;
+        $this->perfil = $perfil;
+        $this->id = $id;
     }
 
     public function guardarUsuario() {
         $conexion = new Connect();
         if ($this->id) {
-            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET solicita = :solicita, dni = :dni, nombre = :nombre, telefono = :telefono, correo = :correo, cuof = :cuof, denominacion = :denominacion, perfil = :perfil WHERE id = :id');
+            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET solicita = :solicita, dni = :dni, nombre = :nombre, telefono = :telefono, correo = :correo, cuof = :cuof, denominacion = :denominacion, perfil = :perfil WHERE id_usuario = :id');
             $consulta->bindParam(':solicita', $this->solicita);
             $consulta->bindParam(':dni', $this->dni);
             $consulta->bindParam(':nombre', $this->nombre);
@@ -125,7 +125,7 @@ class Usuario {
 
     public function buscarPorId($id) {
         $conexion = new Connect();
-        $consulta = $conexion->prepare('SELECT solicita, dni, nombre, telefono, correo, cuof, denominacion, perfil FROM '.self::TABLA.' WHERE id = :id');
+        $consulta = $conexion->prepare('SELECT solicita, dni, nombre, telefono, correo, cuof, denominacion, perfil FROM '.self::TABLA.' WHERE id_usuario = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
         $registro = $consulta->fetch();

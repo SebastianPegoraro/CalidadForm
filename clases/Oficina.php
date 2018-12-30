@@ -54,7 +54,7 @@ class Oficina {
         $this->cuofDestino = $cuofDestino;
     }
 
-    public function __construct($numero, $denominacion, $opcion, $categoria, $cuofDestino, $id=null) {
+    public function __construct($numero, $denominacion, $opcion, $categoria=null, $cuofDestino=null, $id=null) {
         $this->numero = $numero;
         $this->denominacion = $denominacion;
         $this->opcion = $opcion;
@@ -66,7 +66,7 @@ class Oficina {
     public function guardarOficina() {
         $conexion = new Connect();
         if ($this->id) {
-            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET numero = :numero, denominacion = :denominacion, opcion = :opcion, categoria = :categoria, cuof_destino = :cuofDestino WHERE id = :id');
+            $consulta = $conexion->prepare('UPDATE '.self::TABLA.' SET numero = :numero, denominacion = :denominacion, opcion = :opcion, categoria = :categoria, cuof_destino = :cuofDestino WHERE id_oficina = :id');
             $consulta->bindParam(':numero', $this->numero);
             $consulta->bindParam(':denominacion', $this->denominacion);
             $consulta->bindParam(':opcion', $this->opcion);
@@ -75,7 +75,7 @@ class Oficina {
             $consulta->bindParam(':id', $this->id);
             $consulta->execute();
         } else {
-            $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (numero, denominacion, opcion, categoria, cuof_destino) VALUES (:numero, :denominacion, :opcion, :categoria, :cuof_destino)');
+            $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (numero, denominacion, opcion, categoria, cuof_destino) VALUES (:numero, :denominacion, :opcion, :categoria, :cuofDestino)');
             $consulta->bindParam(':numero', $this->numero);
             $consulta->bindParam(':denominacion', $this->denominacion);
             $consulta->bindParam(':opcion', $this->opcion);
@@ -89,12 +89,12 @@ class Oficina {
 
     public function buscarPorId($id) {
         $conexion = new Connect();
-        $consulta = $conexion->prepare('SELECT numero, denominacion, opcion, categoria, cuofDestino FROM '.self::TABLA.' WHERE id = :id');
+        $consulta = $conexion->prepare('SELECT numero, denominacion, opcion, categoria, cuof_destino FROM '.self::TABLA.' WHERE id_oficina = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
         $registro = $consulta->fetch();
         if ($registro) {
-            return new self($registro['numero'], $registro['denominacion'], $registro['opcion'], $registro['categoria'], $registro['cuofDestino'], $id);
+            return new self($registro['numero'], $registro['denominacion'], $registro['opcion'], $registro['categoria'], $registro['cuof_destino'], $id);
         } else {
             return false;
         }

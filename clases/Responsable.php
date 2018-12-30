@@ -1,3 +1,4 @@
+
 <?php
 require_once 'Connect.php';
 
@@ -8,7 +9,7 @@ class Responsable {
     private $oficina;
     private $dni;
     private $fecha;
-    const TABLA = 'responsable';
+    const TABLA = 'responsables';
 
     public function getId() {
         return $this->id;
@@ -89,7 +90,7 @@ class Responsable {
 
     public function buscarPorId($id) {
         $conexion = new Connect();
-        $consulta = $conexion->prepare('SELECT nombre, correo_tel, oficina, dni, fecha FROM '.self::TABLA.' WHERE id = :id');
+        $consulta = $conexion->prepare('SELECT nombre, correo_tel, oficina, dni, fecha FROM '.self::TABLA.' WHERE id_responsable = :id');
         $consulta->bindParam(':id', $id);
         $consulta->execute();
         $registro = $consulta->fetch();
